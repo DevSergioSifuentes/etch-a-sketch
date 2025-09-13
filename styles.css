@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#frame{
+    background-color: red;
+    border-radius: 20px;
+    height:700px;
+    width: 700px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title p{
+    font-family:"Brush Script MT", sans-serif ;
+    color: yellow;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* #title,
+#display,
+#controls{
+    border: 1px solid black;
+} */
+
+#display{
+    background-color: white;
+    height: 500px;
+    width: 500px;
+    margin-top: 0;
+}
+#title{
+    height:80px;
+    margin-bottom: 0;
+}
+
+#controls{
+    display:flex;
+    justify-content: space-between;
+    width:675px;
+    padding:0 5px 5px 5px;
+}
+
+.knob{
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
