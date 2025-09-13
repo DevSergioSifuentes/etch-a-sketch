@@ -10,6 +10,7 @@ function createGrid(number){
         let square = document.createElement("div");
         square.style.width= value.toString()+"px";
         square.style.height= value.toString()+"px";
+        square.style.opacity = "0.0";
         square.setAttribute("class","square-space");
 
         display.appendChild(square);
@@ -18,7 +19,16 @@ function createGrid(number){
     const pixels = document.querySelectorAll(".square-space");
     pixels.forEach((pixel) =>{
         pixel.addEventListener("mouseover", (e) => {
+            let opacityValue=e.target.style.opacity;
+            let newOpacity = 0;
+            if(parseFloat(opacityValue) <1 ){
+                newOpacity =(parseFloat(opacityValue) + .10).toString(); 
+            }
+            else{
+                newOpacity = "1";
+            }
             e.target.style.backgroundColor= "black";
+            e.target.style.opacity = newOpacity;
         })
     }
      )
