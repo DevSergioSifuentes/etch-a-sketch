@@ -1,9 +1,8 @@
 const display = document.querySelector("#display");
 
+
 function createGrid(number){
     value =(100/number)*5;
-    //valueString = value.toString()+"%";
-    console.log(value);
     for(let i=0; i < number*number; i++){
         let square = document.createElement("div");
         square.style.width= value.toString()+"px";
@@ -12,6 +11,18 @@ function createGrid(number){
 
         display.appendChild(square);
     }
+
+    const pixels = document.querySelectorAll(".square-space");
+    pixels.forEach((pixel) =>{
+        pixel.addEventListener("mouseover", (e) => {
+            e.target.style.backgroundColor= "black";
+        })
+    }
+     )
 }
+
+
+
+
 
 createGrid(16);
