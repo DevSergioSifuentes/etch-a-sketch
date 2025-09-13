@@ -9,7 +9,7 @@ be created. (Not necessary, just for bragging).
 3. Add a hover effect so divs change color when the mouse passes over.
 4. Add a button so the user can select the number of squares
 (maximum 100), erase the squares and create new ones.
-extra:
 
+extra:
 a. Add a ramdomized color in each square.
 b. Add a darkening effect with each mouse pass (10% each time)

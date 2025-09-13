@@ -2,9 +2,20 @@ const display = document.querySelector("#display");
 const resetButton = document.querySelector("#reset");
 const randomButton = document.querySelector("#random");
 
+let randomOption = false;
+let quantity = 16;
 
+function getRandomRgb(){
+    let rbg= [];
+    rbg.push(Math.floor(Math.random()*256)).toString();
+    rbg.push(Math.floor(Math.random()*256)).toString();
+    rbg.push(Math.floor(Math.random()*256)).toString();
+
+    return rbg;
+}
 
 function createGrid(number){
+    
     value =(100/number)*5;
     for(let i=0; i < number*number; i++){
         let square = document.createElement("div");
@@ -12,7 +23,15 @@ function createGrid(number){
         square.style.height= value.toString()+"px";
         square.style.opacity = "0.0";
         square.setAttribute("class","square-space");
+        let randomRgb=getRandomRgb();
+        if(randomOption === false){
+            square.style.backgroundColor = "black";
+        }else{
 
+            let randomRgbString = "rgb("+randomRgb[0]+
+            ","+randomRgb[1]+","+randomRgb[2]+")";
+            square.style.backgroundColor = randomRgbString;
+        }
         display.appendChild(square);
     }
 
@@ -27,11 +46,12 @@ function createGrid(number){
             else{
                 newOpacity = "1";
             }
-            e.target.style.backgroundColor= "black";
             e.target.style.opacity = newOpacity;
         })
     }
      )
+
+     quantity = number;
 }
 
 function clearGrid(){
@@ -53,6 +73,18 @@ resetButton.addEventListener("click",() => {
     }
 })
 
+randomButton.addEventListener("click",(e) =>{
+    if(randomOption === false){
+        e.target.style.backgroundColor ="yellow"
+        randomOption = true;
+    }else{
+        e.target.style.backgroundColor ="white"
+        randomOption = false;
+    }
+
+    clearGrid();
+    createGrid(quantity);
+} )
 
 
-createGrid(16);
+createGrid(quantity);
