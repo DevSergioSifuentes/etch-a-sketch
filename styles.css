@@ -57,9 +57,18 @@ body{
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .square-space{
     border: 1px solid oldlace;
     background-color: white;
+}
+
+.knob button{
+    background-color: white;
+    border: none;
+    color: red;
 }
